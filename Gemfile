@@ -7,6 +7,8 @@ gem 'rails', '4.1.1'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -27,7 +29,17 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+
+# Populate users and events with fake info
+gem 'faker'
+
+# Hide secrets.yml from Heroku
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
+
+group :production do
+	gem 'rails_12factor'
+end
 
 # Use unicorn as the app server
 # gem 'unicorn'
