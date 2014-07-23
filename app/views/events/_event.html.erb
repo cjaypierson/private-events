@@ -1,3 +1,4 @@
+<% event_view ||= false %>
 <div class="event">
 	<div class="row">
 		<div class="col-xs-offset-2 col-xs-8">
@@ -13,6 +14,9 @@
 				<p><%= event.description %></p>
 			<% end %>
 			<h2><%= event.time.strftime("%H:%M On %B #{event.time.day.ordinalize}") %> @ <%= event.location %></h2>
+			<% if event_view %>
+				<ul><%= render 'attendees' %></ul>
+			<% end %>
 		</div>
 	</div>
 </div>
