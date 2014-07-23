@@ -15,8 +15,11 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find_by(id: params[:id])
-		@events = @user.created_events.all
-		@attended = @user.attended_events.all
+		#@events = Event.joins(commitments: :event_attendee).where("commitments.event_attendee_id = #{@user.id} OR events.creator_id = #{@user.id}")
+		@past_created = @user.past_created_events
+		@past_attended = @user.past_attended_events
+		@upcoming_attended = @user.upcoming_attended_events
+		@upcoming_created = @user.upcoming_created_events
 	end
 
 	def edit

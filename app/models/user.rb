@@ -17,6 +17,22 @@ class User < ActiveRecord::Base
 		Digest::SHA1.hexdigest(token.to_s)
 	end
 
+	def upcoming_created_events
+		self.created_events.where("events.time >= ?", Time.now.to_datetime)
+	end
+
+	def past_created_events
+		self.created_events.where("events.time < ?", Time.now.to_datetime)
+	end
+
+	def upcoming_attended_events
+		self.attended_events.where("events.time >= ?", Time.now.to_datetime)
+	end
+
+	def past_attended_events
+		self.attended_events.where("events.time < ?", Time.now.to_datetime)
+	end
+
 	private
 
 		def create_remember_token

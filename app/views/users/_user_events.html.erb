@@ -1,4 +1,4 @@
-<% events.each do |event| %>
+<% events.each do |event| %>	
 	<div class="event">
 		<div class="row">
 			<div class="col-xs-offset-2 col-xs-8">
@@ -10,7 +10,9 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-offset-1 col-xs-10">
+				<p><%= event.description %></p>
 				<h2><%= event.time.strftime("%H:%M On %B #{event.time.day.ordinalize}") %> @ <%= event.location %></h2>
+				<ul><%= render 'events/attendees', event: event %></ul>
 			</div>
 		</div>
 	</div>

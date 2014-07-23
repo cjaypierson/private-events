@@ -3,13 +3,22 @@
 
 <div class="row">
 	<div class="col-sm-6">
-		<h2>Created Events</h2>
-		<%= render @events %>
-	</div>
+		<h2>Organizer</h2>
+		<%= render 'user_events', events: @upcoming_created %>
+	</div>	
 	<div class="col-sm-6">
-		<h2>Attended Events</h2>
-		<% @attended.each do |event| %>
-			<%= render 'events/event', event: event %>
-		<% end %>
+		<h2>Guest</h2>
+			<%= render 'user_events', events: @upcoming_attended%>
 	</div>
 </div>
+
+<hr><h2>Past Events</h2><hr>
+	
+	<div class="row">
+		<div class="col-sm-6">
+			<%= render 'user_events', events: @past_created %>
+		</div>
+		<div class="col-sm-6">
+				<%= render 'user_events', events: @past_attended %>
+		</div>
+	</div>

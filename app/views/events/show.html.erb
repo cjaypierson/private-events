@@ -2,6 +2,20 @@
 
 <div class="row">
 	<div class="col-sm-offset-3 col-sm-6">
-			<%= render 'event', event: @event, event_view: true %>
+		<div class="event">
+			<div class="row">
+				<div class="col-xs-offset-2 col-xs-8">
+					<h1><%= @event.name %></h1>
+				</div>
+				<div class="col-xs-2">
+					<%= link_to "Attend", event_commitments_path(@event), method: "POST", class: "btn btn-small btn-primary" %>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-offset-1 col-xs-10">
+					<h2><%= @event.time.strftime("%H:%M On %B #{@event.time.day.ordinalize}") %> @ <%= @event.location %></h2>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

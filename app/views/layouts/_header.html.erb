@@ -5,6 +5,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><%= link_to "Events", events_path %></li>
 				<% if signed_in? %>
+					<li><%= link_to "New Event", new_event_path %></li>
 					<% if yield(:title) == current_user.name %>
 						<li><%= link_to "Settings", edit_user_path(current_user) %></li>
 					<% else %>		
