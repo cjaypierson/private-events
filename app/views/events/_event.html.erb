@@ -1,0 +1,18 @@
+<div class="event">
+	<div class="row">
+		<div class="col-xs-offset-2 col-xs-8">
+			<h1><%= link_to event.name, event %></h1>
+		</div>
+		<div class="col-xs-2">
+			<%= link_to "Attend", event_commitments_path(event), method: "POST", class: "btn btn-small btn-primary" %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-offset-1 col-xs-10">
+			<% if event_view %>
+				<p><%= event.description %></p>
+			<% end %>
+			<h2><%= event.time.strftime("%H:%M On %B #{event.time.day.ordinalize}") %> @ <%= event.location %></h2>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,102 @@
+/* Universal */
+h1 {
+	text-align: center;
+}
+
+body {
+	padding-top: 60px;
+}
+
+.center {
+	text-align: center;
+	h1 {
+		margin-bottom: 10px;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1;
+}
+
+h1 { 
+	font-size: 3em;
+	letter-spacing: -2px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1.2em;
+	letter-spacing: -1px;
+	margin-bottom: 30px;
+	text-align: center;
+	font-weight: normal;
+	color: $gray-light;
+}
+
+p {
+	font-size: 1.1em;
+	line-height: 1.7em;
+}
+
+/* Forms */
+label, input, textarea {
+	width: 100%;
+	&:last-child {
+		margin-top: 10px;
+	}
+}
+
+.error_list {
+	color: red;
+	list-style: none;
+}
+
+/* Header */
+
+#logo {
+	font-size: 2.5em;
+	padding-left: 10px;
+	&:hover {
+		color: red;
+		text-decoration: none;
+	}
+}
+
+nav {
+	&:last-child {
+		padding-right: 10px;
+	}
+}
+
+/* Event Listings */
+.event {
+	margin: 20px 0;
+	border: 2px solid $gray-dark;
+	border-radius: 5px;
+	background-color: $gray-lighter;
+	h1 {
+		font-size: 2em;
+		display: block;
+		a {
+			color: #428bca;
+		}
+	}
+	p {
+		text-align: center;
+	}
+	.btn {
+		float: right;
+		margin: 5px 5px 0 0;
+	}
+}
+
+/* Miscellaneous */
+
+.debug_dump {
+	clear: both;
+	float: left;
+	width: 100%;
+	margin-top: 45px;
+	@include box_sizing(border-box);
+}
